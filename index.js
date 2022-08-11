@@ -1,22 +1,10 @@
-// Manipuler les elements de la page html (div)
-let monDiv = document.getElementById('content')
+let inputText = document.getElementById('inputText');
 
-// Changer le contenu d'un element
-monDiv.innerHTML = "<h1>Hello everyone</h1>";
-
-// Creer un element (paragraphe)
-let child = document.createElement('div');
-
-// Ajouter un attribut a un element
-child.setAttribute("class", "bg-primary");
-
-child.innerHTML = `<h2 class="text-light ">What's up ?</h2>`;
-
-// Ajouter l'element creer a l'element parent
-monDiv.appendChild(child);
-
-// Creons et ajoutons un second element
-let secondChild = document.createElement("div");
-secondChild.setAttribute("class", "bg-danger");
-secondChild.innerHTML = `<h2 class="text-light">What's new ?</h2>`;
-monDiv.appendChild(secondChild);
+inputText.addEventListener('change', (event) => {
+    let resultat = document.getElementsByClassName('resultat')[0];
+    resultat.innerHTML = `
+    <h3>Vous avez ecrit: ${event.target.value}</h3><br>
+    <h3>Nombre de lettre saisie: ${event.target.value.length}</h3>
+    <h3>Votre saisie en majuscule: ${event.target.value.toUpperCase()}</h3>
+    `;
+});
