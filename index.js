@@ -1,9 +1,5 @@
-let myCheckbok = document.getElementById('secretDisplay');
-let resultat = document.getElementsByClassName('resulat')[0];
-
-myCheckbok.addEventListener('change', () => {
-    if (resultat.hidden == true)
-        resultat.hidden = false;
-    else
-        resultat.hidden = true;
-});
+function display() {
+    let secret = document.getElementById('theSecret');
+    let resultat = document.getElementById('resulat');
+    resultat.setAttribute('class', 'visually-hidden');
+};
