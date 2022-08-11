@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Maximus203/Java-script/issues"
   },
-  "homepage": "https://github.com/Maximus203/Java-script#readme"
+  "homepage": "https://github.com/Maximus203/Java-script#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
 }
