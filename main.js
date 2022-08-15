@@ -1,7 +1,9 @@
 // Import
 const express = require('express');
 // Routes
-require('./routes');
+const index = require('./routes/index');
+const projects = require('./routes/projects');
+//require('./views');
 
 
 
