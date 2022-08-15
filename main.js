@@ -1,8 +1,6 @@
 // Import
 const express = require('express');
 // Routes
-require('./routes');
-
 
 
 // Creating a variable named port and setting it value to 3000
@@ -13,9 +11,15 @@ const app = express();
 app.set("port", port);
 
 
+// public notre base de vue
+app.use(express.static('public'));
 // Defining a route to /project
-app.get('/', index)
-app.get('/projects', projects)
+app.get('/index', index = (req, res) => {
+    res.render('index.html');
+});
+app.get('/classe', classe = (req, res) => {
+    res.render('classe.html');
+});
 
 
 
