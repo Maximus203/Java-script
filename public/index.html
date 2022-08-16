@@ -11,25 +11,134 @@
 </head>
 
 <body>
-    <!-- Nav tabs -->
-    <ul class="nav nav-tabs" id="navId" role="tablist">
-        <li class="nav-item">
-            <a href="./index.html" class="nav-link active" data-bs-toggle="tab">Acceuil</a>
-        </li>
-        <li class="nav-item" role="presentation">
-            <a href="./classe.html" class="nav-link" data-bs-toggle="tab">Classe</a>
-        </li>
-    </ul>
-
-    <!-- Content (content)-->
-    <div class="card mx-auto " style="width: 45rem;">
-        <img src="./images/banner.jpg" class="card-img-top align-content-center" alt="Super heroes">
-        <div class="card-body">
-            <p class="card-text">The school that trains superheroes</p>
+    <div class="container" style="margin-top:.1cm;">
+        <nav class="nav nav-pills flex-column flex-sm-row">
+            <a class="flex-fill text-center btn btn-outline-dark nav-link active" aria-current="page"
+                href="./index.html">Acceuil</a>
+            <a class="flex-fill text-center btn btn-outline-dark nav-link" href="./section.html">Section</a>
+            <a class="flex-fill text-center btn btn-outline-dark nav-link" href="./projet.html">Projet</a>
+            <a class="flex-fill text-center btn btn-outline-dark nav-link" href="./etudiant.html">Etudiant</a>
+        </nav>
+        <div class="menu m-3 ">
+            <div class="display-4 text-center text-dark text-monospace"><b>MENU</b></div>
+            <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action" onclick="creerSection()" aria-current="true">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1"><b>1. Creer une section</b></h5>
+                    </div>
+                    <p class="mb-1"><i>La section represente la filiere des etudiants de cette classe</i></p>
+                </a>
+                <a href="./projet.html" class="list-group-item list-group-item-action" onclick="creerProjet()"
+                    aria-current="true">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1"><b>2. Creer un projet</b></h5>
+                    </div>
+                    <p class="mb-1"><i>Le projet est donner en fonction de la section de l'etudiant</i></p>
+                </a>
+                <a href="./section.html" class="list-group-item list-group-item-action" onclick="creerEtudiant()"
+                    aria-current="true">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1"><b>3. Creer un etudiant</b></h5>
+                    </div>
+                    <p class="mb-1"><i>Enregistrer vos etudiants</i></p>
+                </a>
+            </div>
         </div>
+
+        <div class="row">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Numero section</th>
+                        <th>Nom section</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <div id="section">
+
+                    </div>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="row">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Numero projet</th>
+                        <th>Theme</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <div id="projet">
+
+                    </div>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="row">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Numero etudiant</th>
+                        <th>Prenom</th>
+                        <th>Nom</th>
+                        <th>Section</th>
+                        <th>Theme de projet</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <div id="etudiant">
+
+                    </div>
+                </tbody>
+            </table>
+        </div>
+
     </div>
+    <script src="./js/Etudiant.js"></script>
+    <script src="./js/Projet.js"></script>
+    <script src="./js/Section.js"></script>
+    <script>
+        let arraySection = [];
+        let arrayProjet = [];
+        let arrayEtudiant = [];
 
 
+        function addSection(line) {
+            let parent, enfantOne, enfantTwo;
+            parent.createElement('tr')
+
+            enfantOne.createElement('td');
+            enfantTwo.createElement('td');
+
+            enfantOne.innerHTML = `${line.numSection}`;
+            enfantTwo.innerHTML = `${line.nomSection}`;
+
+            parent.appendChild(enfantOne);
+            parent.appendChild(enfantTwo);
+
+            document.getElementById('section').appendChild(parent);
+        }
+
+        function creerSection() {
+            let numSection;
+            let nomSection;
+            do {
+                let numSection = prompt("Numero section ?");
+                let nomSection = prompt("Nom de section ?");
+                if (numSection <= 0)
+                    alert('Le numero section ne peut pas etre negatif. Reprennez !');
+            } while (numSection <= 0);
+
+            let newSection = new Section(numSection, nomSection);
+            arraySection.add(section);
+            addSection(newSection);
+        }
+
+
+    </script>
 </body>
 
 </html>

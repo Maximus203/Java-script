@@ -17,10 +17,15 @@ app.use(express.static('public'));
 app.get('/index', index = (req, res) => {
     res.render('index.html');
 });
-app.get('/classe', classe = (req, res) => {
-    res.render('classe.html');
+app.get('/etudiant', etudiant = (req, res) => {
+    res.render('etudiant.html');
 });
-
+app.get('/section', section = (req, res) => {
+    res.render('section.html');
+});
+app.get('/projet', projet = (req, res) => {
+    res.render('projet.html');
+});
 
 
 
