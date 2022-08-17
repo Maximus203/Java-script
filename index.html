@@ -12,26 +12,29 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
         crossorigin="anonymous"></script>
-
     <title>Exemple</title>
 </head>
 
 <body>
     <div class="container">
-
-        <div class="display-6 m-3 p-3 justify-content-center">
-            <div class="form-floating">
-                <button class="btn btn-success" id="theSecret" onclick="display">Afficher le secret</button>
-            </div>
-        </div>
-
-        <div id=" resultat">
-            <div class="card bg-dark" style="width: 18rem;">
-                <img src="./images/secret.jpg" class="card-img-top" alt="secret">
-                <div class="card-body">
-                    <p class="card-text text-light">Ceci est un secret shuuuuut !</p>
+        <div class="row align-items-center mx-auto" style=" width:26em;">
+            <form class="form" style="margin:2em;" onsubmit="display(); return false;">
+                <div id="resultat">
+                    <div class="card bg-dark" style="width: 24rem;">
+                        <img src="./images/secret.jpg" class="card-img-top" alt="secret">
+                        <div class="card-body">
+                            <p class="card-text text-center text-light">Ceci est un secret shuuuuut !</p>
+                        </div>
+                    </div>
                 </div>
-            </div>
+                <script>
+                    document.getElementById('resultat').hidden = false;
+                </script>
+                <div class="row align-content-center mx-auto" style="width: 14em; margin-top: 2cm;">
+                    <input type="submit" class="btn btn-dark" value="Afficher le secret" id="theSecret">
+                </div>
+
+            </form>
         </div>
 
     </div>
